@@ -155,6 +155,9 @@ jobs:
                   CI_SMOKE_BUILD_ATTEMPTS: 3
               run: bash scripts/ci/smoke_build_retry.sh
             - name: Check binary size
+              env:
+                  # Hosted linux runners currently produce ~20.4 MiB release-fast binary.
+                  BINARY_SIZE_HARD_LIMIT_BYTES: "22020096" # 21 MiB
               run: bash scripts/ci/check_binary_size.sh target/release-fast/zeroclaw
 
     docs-only:

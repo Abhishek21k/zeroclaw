@@ -108,7 +108,7 @@ jobs:
 
     deny:
         name: License & Supply Chain
-        runs-on: [self-hosted, aws-india]
+        runs-on: ubuntu-22.04
         timeout-minutes: 20
         env:
             CARGO_HOME: /tmp/zeroclaw-cargo-${{ github.run_id }}-${{ github.job }}

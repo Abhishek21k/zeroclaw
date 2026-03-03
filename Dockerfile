@@ -5,6 +5,8 @@ FROM rust:1.93-slim@sha256:7e6fa79cf81be23fd45d857f75f583d80cfdbb11c91fa06180fd7
 
 WORKDIR /app
 ARG ZEROCLAW_CARGO_FEATURES=""
+ARG TARGETOS
+ARG TARGETARCH
 
 # Install build dependencies
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
@@ -26,9 +28,9 @@ RUN mkdir -p src benches crates/robot-kit/src crates/zeroclaw-types/src crates/z
     && echo "pub fn placeholder() {}" > crates/robot-kit/src/lib.rs \
     && echo "pub fn placeholder() {}" > crates/zeroclaw-types/src/lib.rs \
     && echo "pub fn placeholder() {}" > crates/zeroclaw-core/src/lib.rs
-RUN --mount=type=cache,id=zeroclaw-cargo-registry,target=/usr/local/cargo/registry,sharing=locked \
-    --mount=type=cache,id=zeroclaw-cargo-git,target=/usr/local/cargo/git,sharing=locked \
-    --mount=type=cache,id=zeroclaw-target,target=/app/target,sharing=locked \
+RUN --mount=type=cache,id=zeroclaw-cargo-registry-${TARGETOS}-${TARGETARCH},target=/usr/local/cargo/registry,sharing=locked \
+    --mount=type=cache,id=zeroclaw-cargo-git-${TARGETOS}-${TARGETARCH},target=/usr/local/cargo/git,sharing=locked \
+    --mount=type=cache,id=zeroclaw-target-${TARGETOS}-${TARGETARCH},target=/app/target,sharing=locked \
     if [ -n "$ZEROCLAW_CARGO_FEATURES" ]; then \
       cargo build --release --features "$ZEROCLAW_CARGO_FEATURES"; \
     else \
@@ -60,9 +62,9 @@ RUN mkdir -p web/dist && \
         '  </body>' \
         '</html>' > web/dist/index.html; \
     fi
-RUN --mount=type=cache,id=zeroclaw-cargo-registry,target=/usr/local/cargo/registry,sharing=locked \
-    --mount=type=cache,id=zeroclaw-cargo-git,target=/usr/local/cargo/git,sharing=locked \
-    --mount=type=cache,id=zeroclaw-target,target=/app/target,sharing=locked \
+RUN --mount=type=cache,id=zeroclaw-cargo-registry-${TARGETOS}-${TARGETARCH},target=/usr/local/cargo/registry,sharing=locked \
+    --mount=type=cache,id=zeroclaw-cargo-git-${TARGETOS}-${TARGETARCH},target=/usr/local/cargo/git,sharing=locked \
+    --mount=type=cache,id=zeroclaw-target-${TARGETOS}-${TARGETARCH},target=/app/target,sharing=locked \
     if [ -n "$ZEROCLAW_CARGO_FEATURES" ]; then \
       cargo build --release --features "$ZEROCLAW_CARGO_FEATURES"; \
     else \

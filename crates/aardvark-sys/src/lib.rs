@@ -310,7 +310,10 @@ impl AardvarkHandle {
         let mut buf = [0u8; 1];
         for addr in 0x08u16..=0x77 {
             let ret = unsafe { f(self.handle, addr, AA_I2C_NO_FLAGS, 1, buf.as_mut_ptr()) };
-            if ret >= 0 {
+            // ret > 0: bytes received → device ACKed
+            // ret == 0: NACK → no device at this address
+            // ret < 0: error code → skip
+            if ret > 0 {
                 found.push(addr as u8);
             }
         }

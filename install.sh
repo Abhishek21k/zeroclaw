@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Canonical remote installer entrypoint.
-# Default behavior for no-arg interactive shells is TUI onboarding.
+# Default behavior for no-arg interactive shells is guided interactive onboarding.
 
 BOOTSTRAP_URL="${ZEROCLAW_BOOTSTRAP_URL:-https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/refs/heads/main/scripts/bootstrap.sh}"
 

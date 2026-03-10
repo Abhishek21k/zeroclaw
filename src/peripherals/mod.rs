@@ -163,7 +163,12 @@ pub async fn create_peripheral_tools(config: &PeripheralsConfig) -> Result<Vec<A
         {
             match rpi::RpiGpioPeripheral::connect_from_config(board).await {
                 Ok(peripheral) => {
-                    tools.extend(peripheral.tools());
+                    tools.extend(
+                        peripheral
+                            .tools()
+                            .into_iter()
+                            .map(|tool| Arc::<dyn Tool>::from(tool)),
+                    );
                     tracing::info!(board = %board.board, "RPi GPIO peripheral connected");
                 }
                 Err(e) => {
@@ -189,7 +194,7 @@ pub async fn create_peripheral_tools(config: &PeripheralsConfig) -> Result<Vec<A
                     tracing::warn!("Peripheral {} connect warning (continuing)", p.name());
                 }
                 serial_transports.push((board.board.clone(), p.transport()));
-                tools.extend(p.tools());
+                tools.extend(p.tools().into_iter().map(Arc::<dyn Tool>::from));
                 if board.board == "arduino-uno" {
                     if let Some(ref path) = board.path {
                         tools.push(Arc::new(arduino_upload::ArduinoUploadTool::new(

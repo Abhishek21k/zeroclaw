@@ -165,6 +165,7 @@ fn load_hardware_context_from_dir(hw_dir: &std::path::Path, aliases: &[&str]) ->
     let devices_dir = hw_dir.join("devices");
     for alias in aliases {
         let path = devices_dir.join(format!("{alias}.md"));
+        tracing::info!("loading device file: {:?}", path);
         if let Ok(content) = std::fs::read_to_string(&path) {
             if !content.trim().is_empty() {
                 sections.push(content.trim().to_string());
@@ -225,6 +226,16 @@ fn inject_rpi_context(
         tools.push(Box::new(rpi::RpiSystemInfoTool));
         println!("[registry] loaded built-in: rpi_system_info");
         ctx.write_hardware_context_file();
+        // Load the device profile (rpi0.md) that was just written so its full
+        // GPIO reference and tool-usage rules appear in the system prompt.
+        let device_ctx = load_hardware_context_prompt(&["rpi0"]);
+        if !device_ctx.is_empty() {
+            if !context_files_prompt.is_empty() {
+                context_files_prompt.push_str("\n\n");
+            }
+            context_files_prompt.push_str("## Connected Hardware Devices\n\n");
+            context_files_prompt.push_str(&device_ctx);
+        }
         let rpi_prompt = ctx.to_system_prompt();
         if !context_files_prompt.is_empty() {
             context_files_prompt.push_str("\n\n");

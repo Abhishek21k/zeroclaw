@@ -278,6 +278,10 @@ pub(crate) const DRAFT_PROGRESS_SECTION_END: &str = "\n<!-- progress-end -->\n";
 
 tokio::task_local! {
     static TOOL_LOOP_REPLY_TARGET: Option<String>;
+    /// Override for tool_choice sent to the provider (e.g. "any" to force
+    /// at least one tool call). Set by the gateway path when hardware keywords
+    /// are detected in the user message.
+    pub(crate) static TOOL_CHOICE_OVERRIDE: Option<String>;
 }
 
 const AUTO_CRON_DELIVERY_CHANNELS: &[&str] = &[
@@ -3285,6 +3289,13 @@ pub async fn process_message_with_session(
             "Query connected hardware for reported GPIO pins and LED pin. Use when user asks what pins are available.",
         ));
     }
+    // Add RPi auto-discovered hardware tools (injected via hardware::boot())
+    if tools_registry.iter().any(|t| t.name() == "gpio_rpi_write") {
+        tool_descs.push(("gpio_rpi_write", "Set GPIO pin high or low on Raspberry Pi."));
+        tool_descs.push(("gpio_rpi_read", "Read GPIO pin value on Raspberry Pi."));
+        tool_descs.push(("gpio_rpi_blink", "Blink an LED on Raspberry Pi GPIO. Use when user asks to blink LED."));
+        tool_descs.push(("rpi_system_info", "Get Raspberry Pi system information (model, memory, temperature, uptime)."));
+    }
     let bootstrap_max_chars = if config.agent.compact_context {
         Some(6000)
     } else {
@@ -3354,21 +3365,51 @@ pub async fn process_message_with_session(
     } else {
         None
     };
+    tracing::info!(
+        tool_count = tools_registry.len(),
+        tools = ?tools_registry.iter().map(|t| t.name()).collect::<Vec<_>>(),
+        "tools available to LLM"
+    );
+    tracing::info!(
+        hw_context_present = system_prompt.contains("Hardware Context"),
+        hw_devices_present = system_prompt.contains("Connected Hardware"),
+        rpi_section_present = system_prompt.contains("Raspberry Pi"),
+        prompt_len = system_prompt.len(),
+        "system prompt hardware sections"
+    );
+    // Force tool_choice = "any" when the user message mentions hardware
+    // keywords and RPi tools are available, so the LLM must call a tool
+    // instead of responding with text only.
+    let has_hw_tools = tools_registry
+        .iter()
+        .any(|t| t.name() == "gpio_rpi_blink" || t.name() == "gpio_rpi_write");
+    let hw_keywords = ["blink", "led", "gpio", "pin", "relay", "buzzer"];
+    let msg_lower = message.to_lowercase();
+    let is_hw_request = has_hw_tools && hw_keywords.iter().any(|kw| msg_lower.contains(kw));
+    let tool_choice = if is_hw_request {
+        Some("any".to_string())
+    } else {
+        None
+    };
+
     scope_cost_enforcement_context(
         cost_enforcement_context,
         SAFETY_HEARTBEAT_CONFIG.scope(
             hb_cfg,
-            agent_turn(
-                provider.as_ref(),
-                &mut history,
-                &tools_registry,
-                observer.as_ref(),
-                provider_name,
-                &model_name,
-                config.default_temperature,
-                true,
-                &config.multimodal,
-                config.agent.max_tool_iterations,
+            TOOL_CHOICE_OVERRIDE.scope(
+                tool_choice,
+                agent_turn(
+                    provider.as_ref(),
+                    &mut history,
+                    &tools_registry,
+                    observer.as_ref(),
+                    provider_name,
+                    &model_name,
+                    config.default_temperature,
+                    true,
+                    &config.multimodal,
+                    config.agent.max_tool_iterations,
+                ),
             ),
         ),
     )

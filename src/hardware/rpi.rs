@@ -22,6 +22,43 @@ use std::fmt::Write as _;
 use std::fs;
 use std::time::Duration;
 
+// ─── LED sysfs helpers ──────────────────────────────────────────────────────
+
+/// The Linux LED subsystem paths for the onboard ACT LED.
+/// On RPi 3B/4B/5/Zero2W the ACT LED is wired through the kernel LED driver,
+/// not directly accessible via rppal GPIO.  We must use sysfs instead.
+const LED_SYSFS_PATHS: &[&str] = &[
+    "/sys/class/leds/ACT/brightness",
+    "/sys/class/leds/led0/brightness",
+];
+
+const LED_TRIGGER_PATHS: &[&str] = &[
+    "/sys/class/leds/ACT/trigger",
+    "/sys/class/leds/led0/trigger",
+];
+
+/// Returns true if `pin` is the onboard ACT LED for the detected RPi model.
+fn is_onboard_led(pin: u8) -> bool {
+    RpiModel::detect()
+        .and_then(|m| m.onboard_led_gpio())
+        .is_some_and(|led| led == pin)
+}
+
+/// Find the first existing sysfs brightness path for the ACT LED.
+fn led_brightness_path() -> Option<&'static str> {
+    LED_SYSFS_PATHS.iter().copied().find(|p| std::path::Path::new(p).exists())
+}
+
+/// Ensure the ACT LED trigger is set to "none" so we can control it.
+fn ensure_led_trigger_none() {
+    for path in LED_TRIGGER_PATHS {
+        if std::path::Path::new(path).exists() {
+            let _ = fs::write(path, "none");
+            return;
+        }
+    }
+}
+
 // ─── Board model ────────────────────────────────────────────────────────────
 
 /// Detected Raspberry Pi model variant.
@@ -348,17 +385,33 @@ impl Tool for GpioRpiWriteTool {
             .get("value")
             .and_then(|v| v.as_u64())
             .ok_or_else(|| anyhow::anyhow!("Missing 'value' parameter"))?;
+        let state = if value == 0 { "LOW" } else { "HIGH" };
+
+        // Onboard ACT LED → Linux LED subsystem (sysfs)
+        if is_onboard_led(pin) {
+            let brightness = if value == 0 { "0" } else { "1" };
+            let path = led_brightness_path()
+                .ok_or_else(|| anyhow::anyhow!("ACT LED sysfs path not found"))?;
+            ensure_led_trigger_none();
+            fs::write(path, brightness)?;
+            return Ok(ToolResult {
+                success: true,
+                output: format!("ACT LED (GPIO {}) → {} (via sysfs)", pin, state),
+                error: None,
+            });
+        }
+
+        // Regular GPIO pin → rppal
         let level = if value == 0 {
             rppal::gpio::Level::Low
         } else {
             rppal::gpio::Level::High
         };
-        let state = if value == 0 { "LOW" } else { "HIGH" };
 
         tokio::task::spawn_blocking(move || {
             let gpio = rppal::gpio::Gpio::new()?;
-            let mut pin = gpio.get(pin)?.into_output();
-            pin.write(level);
+            let mut p = gpio.get(pin)?.into_output();
+            p.write(level);
             Ok::<_, anyhow::Error>(())
         })
         .await??;
@@ -407,6 +460,21 @@ impl Tool for GpioRpiReadTool {
             .ok_or_else(|| anyhow::anyhow!("Missing 'pin' parameter"))?
             as u8;
 
+        // Onboard ACT LED → read from sysfs
+        if is_onboard_led(pin) {
+            let path = led_brightness_path()
+                .ok_or_else(|| anyhow::anyhow!("ACT LED sysfs path not found"))?;
+            let raw = fs::read_to_string(path)?.trim().to_string();
+            let value: u8 = if raw == "0" { 0 } else { 1 };
+            let state = if value == 0 { "LOW" } else { "HIGH" };
+            return Ok(ToolResult {
+                success: true,
+                output: json!({ "pin": pin, "value": value, "state": state, "source": "sysfs" }).to_string(),
+                error: None,
+            });
+        }
+
+        // Regular GPIO pin → rppal
         let value = tokio::task::spawn_blocking(move || {
             let gpio = rppal::gpio::Gpio::new()?;
             let p = gpio.get(pin)?.into_input();
@@ -488,6 +556,25 @@ impl Tool for GpioRpiBlinkTool {
             .unwrap_or(500)
             .min(10_000);
 
+        // Onboard ACT LED → Linux LED subsystem (async-friendly, no spawn_blocking)
+        if is_onboard_led(pin) {
+            let path = led_brightness_path()
+                .ok_or_else(|| anyhow::anyhow!("ACT LED sysfs path not found"))?;
+            ensure_led_trigger_none();
+            for _ in 0..times {
+                fs::write(path, "1")?;
+                tokio::time::sleep(Duration::from_millis(on_ms)).await;
+                fs::write(path, "0")?;
+                tokio::time::sleep(Duration::from_millis(off_ms)).await;
+            }
+            return Ok(ToolResult {
+                success: true,
+                output: format!("Blinked ACT LED (GPIO {}) × {} ({}/{}ms) via sysfs", pin, times, on_ms, off_ms),
+                error: None,
+            });
+        }
+
+        // Regular GPIO pin → rppal
         tokio::task::spawn_blocking(move || {
             let gpio = rppal::gpio::Gpio::new()?;
             let mut p = gpio.get(pin)?.into_output();

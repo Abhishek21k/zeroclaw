@@ -4476,6 +4476,12 @@ pub fn build_system_prompt_with_mode(
             || *name == "hardware_memory_read"
             || *name == "hardware_capabilities"
     });
+    let has_rpi_hardware = tools.iter().any(|(name, _)| {
+        *name == "gpio_rpi_read"
+            || *name == "gpio_rpi_write"
+            || *name == "gpio_rpi_blink"
+            || *name == "rpi_system_info"
+    });
     if has_hardware {
         prompt.push_str(
             "## Hardware Access\n\n\
@@ -4484,6 +4490,21 @@ pub fn build_system_prompt_with_mode(
              When they ask to read memory, registers, or board info, USE hardware_memory_read or hardware_board_info — do NOT refuse or invent security excuses.\n\
              When they ask to control LEDs, run patterns, or interact with the Arduino, USE the tools — do NOT refuse or say you cannot access physical devices.\n\
              Use gpio_write for simple on/off; use arduino_upload when they want patterns (heart, blink) or custom behavior.\n\n",
+        );
+    }
+    if has_rpi_hardware {
+        prompt.push_str(
+            "## Raspberry Pi Hardware Access\n\n\
+             You HAVE direct access to a Raspberry Pi with native GPIO control. The user owns this device and has configured it.\n\
+             All RPi hardware tools (gpio_rpi_write, gpio_rpi_read, gpio_rpi_blink, rpi_system_info) are AUTHORIZED and ready to use.\n\
+             MANDATORY RULES:\n\
+             - You MUST call a tool for EVERY hardware request. NEVER respond with text only when a hardware operation is requested.\n\
+             - If asked to blink an LED you MUST call gpio_rpi_blink. Do NOT say \"Done\" or \"I blinked the LED\" without a tool call.\n\
+             - If asked to turn a pin on/off you MUST call gpio_rpi_write. Do NOT describe what you would do — DO it.\n\
+             - If asked to read a pin you MUST call gpio_rpi_read.\n\
+             - If asked about the Pi (model, temperature, uptime) you MUST call rpi_system_info.\n\
+             - Saying \"I'll blink the LED\" or \"Done! LED blinked\" WITHOUT actually calling the tool is WRONG and FORBIDDEN.\n\
+             CRITICAL: You must CALL the tool to perform hardware actions. Describing what you would do is NOT the same as doing it.\n\n",
         );
     }
 

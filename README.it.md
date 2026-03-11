@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Assistente IA privato</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Zero overhead. Zero compromesso. 100% Rust. 100% Agnostico.</strong><br>
-  ⚡️ <strong>Gira su hardware da $10 con <5MB di RAM: È il 99% di memoria in meno di OpenClaw e il 98% più economico di un Mac mini!</strong>
+  ⚡️ <strong>Gira su qualsiasi hardware con <5MB di RAM: 99% di memoria in meno di OpenClaw e 98% più economico di un Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@ Benchmark rapido su macchina locale (macOS arm64, feb. 2026) normalizzato per ha
 | **RAM**                      | > 1 GB        | > 100 MB       | < 10 MB         | **< 5 MB**            |
 | **Avvio (core 0.8 GHz)** | > 500s        | > 30s          | < 1s            | **< 10ms**            |
 | **Dimensione Binario**           | ~28 MB (dist) | N/A (Scripts)  | ~8 MB           | **3.4 MB**            |
-| **Costo**                     | Mac Mini $599 | Linux SBC ~$50 | Scheda Linux $10 | **Qualsiasi hardware $10** |
+| **Costo**                     | Mac Mini $599 | Linux SBC ~$50 | Scheda Linux $10 | **Qualsiasi hardware** |
 
 > Note: I risultati di ZeroClaw sono misurati su build di produzione usando `/usr/bin/time -l`. OpenClaw richiede il runtime Node.js (tipicamente ~390 MB di overhead memoria aggiuntivo), mentre NanoBot richiede il runtime Python. PicoClaw e ZeroClaw sono binari statici. Le cifre RAM sopra sono memoria runtime; i requisiti di compilazione in build-time sono maggiori.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="Confronto ZeroClaw vs OpenClaw" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="Confronto ZeroClaw vs OpenClaw" width="800" />
 </p>
 
 ### Misurazione Locale Riproducibile

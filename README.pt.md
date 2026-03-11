@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Assistente de IA privado</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Zero sobrecarga. Zero compromisso. 100% Rust. 100% Agnóstico.</strong><br>
-  ⚡️ <strong>Roda em hardware de $10 com <5MB de RAM: Isso é 99% menos memória que o OpenClaw e 98% mais barato que um Mac mini!</strong>
+  ⚡️ <strong>Roda em qualquer hardware com <5MB de RAM: 99% menos memória que o OpenClaw e 98% mais barato que um Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@ Benchmark rápido em máquina local (macOS arm64, fev. 2026) normalizado para ha
 | **RAM**                      | > 1 GB        | > 100 MB       | < 10 MB         | **< 5 MB**            |
 | **Início (núcleo 0.8 GHz)** | > 500s        | > 30s          | < 1s            | **< 10ms**            |
 | **Tamanho Binário**           | ~28 MB (dist) | N/A (Scripts)  | ~8 MB           | **3.4 MB**            |
-| **Custo**                     | Mac Mini $599 | Linux SBC ~$50 | Placa Linux $10 | **Qualquer hardware $10** |
+| **Custo**                     | Mac Mini $599 | Linux SBC ~$50 | Placa Linux $10 | **Qualquer hardware** |
 
 > Notas: Os resultados do ZeroClaw são medidos em builds de produção usando `/usr/bin/time -l`. O OpenClaw requer o runtime Node.js (tipicamente ~390 MB de sobrecarga de memória adicional), enquanto o NanoBot requer o runtime Python. PicoClaw e ZeroClaw são binários estáticos. As cifras de RAM acima são memória de runtime; os requisitos de compilação em tempo de build são maiores.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="Comparação ZeroClaw vs OpenClaw" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="Comparação ZeroClaw vs OpenClaw" width="800" />
 </p>
 
 ### Medição Local Reproduzível

@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — עוזר בינה מלאכותית פרטי</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center" dir="rtl">
   <strong>תקורת אפס. אין פשרות. 100% Rust. 100% אגנוסטי.</strong><br>
-  ⚡️ <strong>פועל על חומרה ב-$10 עם <5MB זיכרון: זה 99% פחות זיכרון מ-OpenClaw ו-98% זול יותר מ-Mac mini!</strong>
+  ⚡️ <strong>פועל על כל חומרה עם <5MB זיכרון: זה 99% פחות זיכרון מ-OpenClaw ו-98% זול יותר מ-Mac mini.</strong>
 </p>
 
 <p align="center">

@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Özel Yapay Zeka Asistanı</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Sıfırı aşırı yok. Sıfır ödün ver yok. %100 Rust. %100 Agnostik.</strong><br>
-  ⚡️ <strong>$10 donanımla <5MB RAM ile çalışır: OpenClaw'dan %99 daha az bellek ve Mac mini'den %98 daha ucuz!</strong>
+  ⚡️ <strong>Herhangi bir donanımda <5MB RAM ile çalışır: OpenClaw'dan %99 daha az bellek ve Mac mini'den %98 daha ucuz.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@ Yerel makinede hızlı kıyaslama (macOS arm64, Şub. 2026) 0.8 GHz uç donanım
 | **RAM**                      | > 1 GB        | > 100 MB       | < 10 MB         | **< 5 MB**            |
 | **Başlangıç (0.8 GHz çekirdek)** | > 500s        | > 30s          | < 1s            | **< 10ms**            |
 | **İkili Boyut**           | ~28 MB (dist) | Yok (Betikler)  | ~8 MB           | **3.4 MB**            |
-| **Maliyet**                     | Mac Mini $599 | Linux SBC ~$50 | Linux kart $10 | **Herhangi bir donanım $10** |
+| **Maliyet**                     | Mac Mini $599 | Linux SBC ~$50 | Linux kart $10 | **Herhangi bir donanım** |
 
 > Notlar: ZeroClaw sonuçları `/usr/bin/time -l` kullanılarak üretim derlemelerinde ölçülür. OpenClaw Node.js çalışma zamanı gerektirir (tipik olarak ~390 MB ek bellek yükü), NanoBot ise Python çalışma zamanı gerektirir. PicoClaw ve ZeroClaw statik ikililerdir. Yukarıdaki RAM rakamları çalışma zamanı belleğidir; derleme zamanı derleme gereksinimleri daha yüksektir.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Karşılaştırması" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Karşılaştırması" width="800" />
 </p>
 
 ### Tekrarlanabilir Yerel Ölçüm

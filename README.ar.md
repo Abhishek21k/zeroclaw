@@ -1,12 +1,12 @@
-<p align="center" dir="rtl">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — مساعد ذكاء اصطناعي خاص</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center" dir="rtl">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center" dir="rtl">
   <strong>صفر عبء. صفر تنازلات. 100% Rust. 100% محايد.</strong><br>
-  <strong dir="ltr">⚡️ Runs on $10 hardware with <5MB RAM: That's 99% less memory than OpenClaw and 98% cheaper than a Mac mini!</strong>
+  <strong dir="ltr">⚡️ Runs on any hardware with <5MB RAM: That's 99% less memory than OpenClaw and 98% cheaper than a Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@
 | **الذاكرة العشوائية**                      | > 1 غيغابايت        | > 100 ميغابايت       | < 10 ميغابايت         | **< 5 ميغابايت**            |
 | **بدء التشغيل (نواة 0.8 GHz)** | > 500 ثانية        | > 30 ثانية          | < 1 ثانية            | **< 10 ملي ثانية**            |
 | **حجم الملف الثنائي**           | ~28 ميغابايت (dist) | N/A (Scripts)  | ~8 ميغابايت           | **3.4 ميغابايت**            |
-| **التكلفة**                     | Mac Mini $599 | Linux SBC ~$50 | لوحة Linux $10 | **أي جهاز $10** |
+| **التكلفة**                     | Mac Mini $599 | Linux SBC ~$50 | لوحة Linux $10 | **أي جهاز** |
 
 > ملاحظات: تم قياس نتائج ZeroClaw في إصدارات الإنتاج باستخدام `/usr/bin/time -l`. يتطلب OpenClaw وقت تشغيل Node.js (عادةً ~390 ميغابايت من عبء الذاكرة الإضافي)، بينما يتطلب NanoBot وقت تشغيل Python. PicoClaw و ZeroClaw هما ملفات ثنائية ثابتة. أرقام الذاكرة العشوائية أعلاه هي ذاكرة وقت التشغيل؛ متطلبات التجميع في وقت البناء أعلى.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="مقارنة ZeroClaw مقابل OpenClaw" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="مقارنة ZeroClaw مقابل OpenClaw" width="800" />
 </p>
 
 ### قياس محلي قابل للتكرار

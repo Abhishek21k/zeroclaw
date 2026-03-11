@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Yksityinen tekoälyavustaja</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Noll overhead. Noll kompromissi. 100% Rust. 100% Agnostinen.</strong><br>
-  ⚡️ <strong>Ajaa $10 laitteistolla <5MB RAM:lla: Tämä on 99% vähemmän muistia kuin OpenClaw ja 98% halvempi kuin Mac mini!</strong>
+  ⚡️ <strong>Ajaa millä tahansa laitteistolla <5MB RAM:lla: Tämä on 99% vähemmän muistia kuin OpenClaw ja 98% halvempi kuin Mac mini.</strong>
 </p>
 
 <p align="center">

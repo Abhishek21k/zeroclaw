@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — प्राइवेट AI असिस्टेंट</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>शून्य ओवरहेड। शून्य समझौता। 100% रस्ट। 100% अज्ञेयवादी।</strong><br>
-  ⚡️ <strong>$10 हार्डवेयर पर <5MB RAM के साथ चलता है: यह OpenClaw से 99% कम मेमोरी और Mac mini से 98% सस्ता है!</strong>
+  ⚡️ <strong>किसी भी हार्डवेयर पर <5MB RAM के साथ चलता है: OpenClaw से 99% कम मेमोरी और Mac mini से 98% सस्ता।</strong>
 </p>
 
 <p align="center">

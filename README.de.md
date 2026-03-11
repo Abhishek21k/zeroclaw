@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Privater KI‑Assistent</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Null Overhead. Null Kompromiss. 100% Rust. 100% Agnostisch.</strong><br>
-  ⚡️ <strong>Läuft auf 10$ Hardware mit <5MB RAM: Das ist 99% weniger Speicher als OpenClaw und 98% günstiger als ein Mac mini!</strong>
+  ⚡️ <strong>Läuft auf beliebiger Hardware mit <5MB RAM: Das ist 99% weniger Speicher als OpenClaw und 98% günstiger als ein Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@ Schneller Benchmark auf lokalem Rechner (macOS arm64, Feb. 2026) normalisiert f�
 | **RAM**                      | > 1 GB        | > 100 MB       | < 10 MB         | **< 5 MB**            |
 | **Start (0.8 GHz Kern)** | > 500s        | > 30s          | < 1s            | **< 10ms**            |
 | **Binary-Größe**           | ~28 MB (dist) | N/A (Scripts)  | ~8 MB           | **3.4 MB**            |
-| **Kosten**                     | Mac Mini $599 | Linux SBC ~$50 | Linux-Board $10 | **Jede Hardware $10** |
+| **Kosten**                     | Mac Mini $599 | Linux SBC ~$50 | Linux-Board $10 | **Beliebige Hardware** |
 
 > Hinweise: ZeroClaw-Ergebnisse werden auf Produktions-Builds mit `/usr/bin/time -l` gemessen. OpenClaw benötigt die Node.js-Runtime (typischerweise ~390 MB zusätzlicher Speicher-Overhead), während NanoBot die Python-Runtime benötigt. PicoClaw und ZeroClaw sind statische Binaries. Die oben genannten RAM-Zahlen sind Runtime-Speicher; Build-time-Kompilierungsanforderungen sind höher.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Vergleich" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Vergleich" width="800" />
 </p>
 
 ### Reproduzierbare lokale Messung

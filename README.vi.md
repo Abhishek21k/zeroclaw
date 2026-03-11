@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Trợ lý AI riêng tư</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Không tốn thêm tài nguyên. Không đánh đổi. 100% Rust. 100% Đa nền tảng.</strong><br>
-  ⚡️ <strong>Chạy trên phần cứng $10 với RAM dưới 5MB — ít hơn 99% bộ nhớ so với OpenClaw, rẻ hơn 98% so với Mac mini!</strong>
+  ⚡️ <strong>Chạy trên mọi phần cứng với RAM dưới 5MB — ít hơn 99% bộ nhớ so với OpenClaw, rẻ hơn 98% so với Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -90,12 +90,12 @@ Bảng này dành cho các thông báo quan trọng (thay đổi không tương 
 | **RAM** | > 1GB | > 100MB | < 10MB | **< 5MB** |
 | **Khởi động (lõi 0.8GHz)** | > 500s | > 30s | < 1s | **< 10ms** |
 | **Kích thước binary** | ~28MB (dist) | N/A (Scripts) | ~8MB | **3.4 MB** |
-| **Chi phí** | Mac Mini $599 | Linux SBC ~$50 | Linux Board $10 | **Phần cứng bất kỳ $10** |
+| **Chi phí** | Mac Mini $599 | Linux SBC ~$50 | Linux Board $10 | **Phần cứng bất kỳ** |
 
 > Ghi chú: Kết quả ZeroClaw được đo trên release build sử dụng `/usr/bin/time -l`. OpenClaw yêu cầu runtime Node.js (thường thêm ~390MB bộ nhớ overhead), còn NanoBot yêu cầu runtime Python. PicoClaw và ZeroClaw là các static binary. Số RAM ở trên là bộ nhớ runtime; yêu cầu biên dịch lúc build-time sẽ cao hơn.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Comparison" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Comparison" width="800" />
 </p>
 
 ### Tự đo trên máy bạn

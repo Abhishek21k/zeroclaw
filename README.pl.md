@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Prywatny asystent AI</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Zero narzutu. Zero kompromisów. 100% Rust. 100% Agnostyczny.</strong><br>
-  ⚡️ <strong>Działa na sprzęcie za $10 z <5MB RAM: To 99% mniej pamięci niż OpenClaw i 98% taniej niż Mac mini!</strong>
+  ⚡️ <strong>Działa na dowolnym sprzęcie z <5MB RAM: 99% mniej pamięci niż OpenClaw i 98% taniej niż Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@ Szybki benchmark na maszynie lokalnej (macOS arm64, luty 2026) znormalizowany dl
 | **RAM**                      | > 1 GB        | > 100 MB       | < 10 MB         | **< 5 MB**            |
 | **Start (rdzeń 0.8 GHz)** | > 500s        | > 30s          | < 1s            | **< 10ms**            |
 | **Rozmiar Binarny**           | ~28 MB (dist) | N/A (Skrypty)  | ~8 MB           | **3.4 MB**            |
-| **Koszt**                     | Mac Mini $599 | Linux SBC ~$50 | Płytka Linux $10 | **Dowolny sprzęt $10** |
+| **Koszt**                     | Mac Mini $599 | Linux SBC ~$50 | Płytka Linux $10 | **Dowolny sprzęt** |
 
 > Uwagi: Wyniki ZeroClaw są mierzone na buildach produkcyjnych używając `/usr/bin/time -l`. OpenClaw wymaga runtime Node.js (typowo ~390 MB dodatkowego narzutu pamięci), podczas gdy NanoBot wymaga runtime Python. PicoClaw i ZeroClaw to statyczne binaria. Powyższe liczby RAM to pamięć runtime; wymagania kompilacji w czasie build są wyższe.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="Porównanie ZeroClaw vs OpenClaw" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="Porównanie ZeroClaw vs OpenClaw" width="800" />
 </p>
 
 ### Reprodukowalny Pomiar Lokalny

@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Pribadong AI Assistant</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Zero overhead. Zero compromise. 100% Rust. 100% Agnostic.</strong><br>
-  ⚡️ <strong>Tumatakbo sa $10 hardware na may <5MB RAM: Ito ay 99% mas kaunting memorya kaysa sa OpenClaw at 98% mas mura kaysa sa isang Mac mini!</strong>
+  ⚡️ <strong>Tumatakbo sa kahit anong hardware na may <5MB RAM: 99% mas kaunting memorya kaysa sa OpenClaw at 98% mas mura kaysa sa isang Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@ Mabilis na benchmark sa lokal na machine (macOS arm64, Peb. 2026) na normalized 
 | **RAM**                      | > 1 GB        | > 100 MB       | < 10 MB         | **< 5 MB**            |
 | **Startup (0.8 GHz core)** | > 500s        | > 30s          | < 1s            | **< 10ms**            |
 | **Binary Size**           | ~28 MB (dist) | N/A (Scripts)  | ~8 MB           | **3.4 MB**            |
-| **Gastos**                     | Mac Mini $599 | Linux SBC ~$50 | Linux board $10 | **Kahit anong hardware $10** |
+| **Gastos**                     | Mac Mini $599 | Linux SBC ~$50 | Linux board $10 | **Kahit anong hardware** |
 
 > Mga Tala: Ang mga resulta ng ZeroClaw ay sinusukat sa production builds gamit ang `/usr/bin/time -l`. Ang OpenClaw ay nangangailangan ng Node.js runtime (typically ~390 MB additional memory overhead), habang ang NanoBot ay nangangailangan ng Python runtime. Ang PicoClaw at ZeroClaw ay static binaries. Ang mga RAM figure sa itaas ay runtime memory; ang build-time compilation requirements ay mas mataas.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Comparison" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="ZeroClaw vs OpenClaw Comparison" width="800" />
 </p>
 
 ### Reproducible Local Measurement

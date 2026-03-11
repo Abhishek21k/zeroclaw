@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Asisten AI privat</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Nol overhead. Nol kompromi. 100% Rust. 100% Agnostik.</strong><br>
-  ⚡️ <strong>Jalan di perangkat $10 dengan <5MB RAM: Itu 99% lebih sedikit memori dari OpenClaw dan 98% lebih murah dari Mac mini!</strong>
+  ⚡️ <strong>Jalan di perangkat apa pun dengan <5MB RAM: 99% lebih sedikit memori dari OpenClaw dan 98% lebih murah dari Mac mini.</strong>
 </p>
 
 <p align="center">

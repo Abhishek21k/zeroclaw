@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Privát MI‑asszisztens</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Nulla többletköltség. Nulla kompromisszum. 100% Rust. 100% Agnosztikus.</strong><br>
-  ⚡️ <strong>$10-es hardveren fut <5MB RAM-mal: Ez 99%-kal kevesebb memória, mint az OpenClaw és 98%-kal olcsóbb, mint egy Mac mini!</strong>
+  ⚡️ <strong>Bármilyen hardveren fut <5MB RAM-mal: 99%-kal kevesebb memória, mint az OpenClaw és 98%-kal olcsóbb, mint egy Mac mini.</strong>
 </p>
 
 <p align="center">

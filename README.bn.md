@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — প্রাইভেট এআই সহকারী</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>শূন্য ওভারহেড। শূন্য আপস। 100% রাস্ট। 100% অজ্ঞেয়বাদী।</strong><br>
-  ⚡️ <strong>$10 হার্ডওয়্যারে <5MB RAM নিয়ে চলে: এটি OpenClaw থেকে 99% কম মেমোরি এবং Mac mini থেকে 98% সস্তা!</strong>
+  ⚡️ <strong>যে কোনও হার্ডওয়্যারে <5MB RAM নিয়ে চলে: এটি OpenClaw থেকে 99% কম মেমোরি এবং Mac mini থেকে 98% সস্তা।</strong>
 </p>
 
 <p align="center">

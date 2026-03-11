@@ -137,7 +137,7 @@ tower-http = { version = "0.6", default-features = false, features = ["limit", "
 http-body-util = "0.1"
 
 # Embed frontend assets into binary (web dashboard)
-rust-embed = "8"
+rust-embed = { version = "8", optional = true }
 mime_guess = "2"
 
 # OpenTelemetry — OTLP trace + metrics export.
@@ -186,6 +186,7 @@ libc = "0.2"
 [features]
 default = []
 hardware = ["nusb", "tokio-serial"]
+web-dashboard = ["dep:rust-embed"]
 channel-matrix = ["dep:matrix-sdk"]
 channel-lark = ["dep:prost"]
 memory-postgres = ["dep:postgres"]

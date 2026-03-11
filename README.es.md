@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Asistente de IA privado</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Cero sobrecarga. Cero compromiso. 100% Rust. 100% Agnóstico.</strong><br>
-  ⚡️ <strong>¡Ejecuta en hardware de $10 con <5MB de RAM: ¡Eso es 99% menos memoria que OpenClaw y 98% más barato que un Mac mini!</strong>
+  ⚡️ <strong>Funciona en cualquier hardware con <5MB de RAM: 99% menos memoria que OpenClaw y 98% más barato que un Mac mini.</strong>
 </p>
 
 <p align="center">
@@ -120,12 +120,12 @@ Benchmark rápido en máquina local (macOS arm64, feb. 2026) normalizado para ha
 | **RAM**                      | > 1 GB        | > 100 MB       | < 10 MB         | **< 5 MB**            |
 | **Inicio (núcleo 0.8 GHz)** | > 500s        | > 30s          | < 1s            | **< 10ms**            |
 | **Tamaño Binario**           | ~28 MB (dist) | N/A (Scripts)  | ~8 MB           | **3.4 MB**            |
-| **Costo**                     | Mac Mini $599 | Linux SBC ~$50 | Placa Linux $10 | **Cualquier hardware $10** |
+| **Costo**                     | Mac Mini $599 | Linux SBC ~$50 | Placa Linux $10 | **Cualquier hardware** |
 
 > Notas: Los resultados de ZeroClaw se miden en builds de producción usando `/usr/bin/time -l`. OpenClaw requiere el runtime Node.js (típicamente ~390 MB de sobrecarga de memoria adicional), mientras que NanoBot requiere el runtime Python. PicoClaw y ZeroClaw son binarios estáticos. Las cifras de RAM anteriores son memoria de runtime; los requisitos de compilación en tiempo de build son mayores.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="Comparación ZeroClaw vs OpenClaw" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="Comparación ZeroClaw vs OpenClaw" width="800" />
 </p>
 
 ### Medición Local Reproducible

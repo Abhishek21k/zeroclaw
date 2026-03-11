@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — ผู้ช่วย AI ส่วนตัว</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>โอเวอร์เฮดเป็นศูนย์ ไม่มีการประนีประนอม 100% Rust 100% Agnostic</strong><br>
-  ⚡️ <strong>ทำงานบนฮาร์ดแวร์ $10 ด้วย RAM <5MB: ใช้หน่วยความจำน้อยกว่า OpenClaw 99% และถูกกว่า Mac mini 98%!</strong>
+  ⚡️ <strong>ทำงานบนฮาร์ดแวร์ใดก็ได้ด้วย RAM <5MB: ใช้หน่วยความจำน้อยกว่า OpenClaw 99% และถูกกว่า Mac mini 98%.</strong>
 </p>
 
 <p align="center">

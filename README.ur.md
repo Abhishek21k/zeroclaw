@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — پرائیویٹ اے آئی اسسٹنٹ</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center" dir="rtl">
   <strong>صفر اوور ہیڈ۔ صفر سمجھوتہ۔ 100% رسٹ۔ 100% اگنوسٹک۔</strong><br>
-  ⚡️ <strong>$10 کے ہارڈویئر پر <5MB RAM کے ساتھ چلتا ہے: یہ OpenClaw سے 99% کم میموری اور Mac mini سے 98% سستا ہے!</strong>
+  ⚡️ <strong>کسی بھی ہارڈویئر پر <5MB RAM کے ساتھ چلتا ہے: OpenClaw سے 99% کم میموری اور Mac mini سے 98% سستا۔</strong>
 </p>
 
 <p align="center">

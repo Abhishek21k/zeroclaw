@@ -1,8 +1,8 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Приватный ИИ‑ассистент</h1>
 
-<h1 align="center">ZeroClaw 🦀（Русский）</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Zero overhead. Zero compromise. 100% Rust. 100% Agnostic.</strong>
@@ -82,12 +82,12 @@ ZeroClaw — это производительная и расширяемая �
 | **RAM** | > 1GB | > 100MB | < 10MB | **< 5MB** |
 | **Старт (ядро 0.8GHz)** | > 500s | > 30s | < 1s | **< 10ms** |
 | **Размер бинарника** | ~28MB (dist) | N/A (скрипты) | ~8MB | **~8.8 MB** |
-| **Стоимость** | Mac Mini $599 | Linux SBC ~$50 | Linux-плата $10 | **Любое железо за $10** |
+| **Стоимость** | Mac Mini $599 | Linux SBC ~$50 | Linux-плата $10 | **Любое железо** |
 
 > Примечание: результаты ZeroClaw получены на release-сборке с помощью `/usr/bin/time -l`. OpenClaw требует Node.js runtime; только этот runtime обычно добавляет около 390MB дополнительного потребления памяти. NanoBot требует Python runtime. PicoClaw и ZeroClaw — статические бинарники.
 
 <p align="center">
-  <img src="zero-claw.jpeg" alt="Сравнение ZeroClaw и OpenClaw" width="800" />
+  <img src="docs/assets/zero-claw.jpeg" alt="Сравнение ZeroClaw и OpenClaw" width="800" />
 </p>
 
 ### Локально воспроизводимое измерение

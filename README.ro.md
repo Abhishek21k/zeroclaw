@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Asistent AI privat</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Zero overhead. Zero compromisuri. 100% Rust. 100% Agnostic.</strong><br>
-  ⚡️ <strong>Rulează pe hardware de $10 cu <5MB RAM: Asta e cu 99% mai puțină memorie decât OpenClaw și cu 98% mai ieftin decât un Mac mini!</strong>
+  ⚡️ <strong>Rulează pe orice hardware cu <5MB RAM: cu 99% mai puțină memorie decât OpenClaw și cu 98% mai ieftin decât un Mac mini.</strong>
 </p>
 
 <p align="center">

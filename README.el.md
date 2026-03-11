@@ -1,12 +1,12 @@
-<p align="center">
-  <img src="zeroclaw.png" alt="ZeroClaw" width="200" />
-</p>
+<h1 align="center">🦀 ZeroClaw — Ιδιωτικός βοηθός τεχνητής νοημοσύνης</h1>
 
-<h1 align="center">ZeroClaw 🦀</h1>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/zeroclaw-labs/zeroclaw/master/docs/assets/zeroclaw-banner.png" alt="ZeroClaw banner" width="800" />
+</p>
 
 <p align="center">
   <strong>Μηδενικό overhead. Μηδενικός συμβιβασμός. 100% Rust. 100% Αγνωστικιστικό.</strong><br>
-  ⚡️ <strong>Εκτελείται σε hardware $10 με <5MB RAM: Αυτό είναι 99% λιγότερη μνήμη από το OpenClaw και 98% φθηνότερο από ένα Mac mini!</strong>
+  ⚡️ <strong>Εκτελείται σε οποιοδήποτε hardware με <5MB RAM: 99% λιγότερη μνήμη από το OpenClaw και 98% φθηνότερο από ένα Mac mini.</strong>
 </p>
 
 <p align="center">
